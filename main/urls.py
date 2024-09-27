@@ -9,7 +9,7 @@ home.home_app.add_url_rule(
 project.register_blueprint(blueprint = home.home_app)
 
 tour.tour_app.add_url_rule(
-    rule = "/",
+    rule = "tour/",
     view_func = tour.show_tour,
     methods = ["GET", "POST"]
 )
