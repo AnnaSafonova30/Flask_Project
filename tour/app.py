@@ -2,8 +2,8 @@ import flask
 
 tour_app = flask.Blueprint(
     name = "tour",
-    import_name = "tour",
-    template_folder = "templates",
+    import_name = "app",
+    template_folder = "tour/templates",
     static_folder = "static",
     static_url_path = "/static/" 
 )
