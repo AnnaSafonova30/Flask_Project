@@ -1,5 +1,6 @@
 import home
 import tour
+import user
 from .settings import project
 
 home.home_app.add_url_rule(
@@ -14,3 +15,10 @@ tour.tour_app.add_url_rule(
     methods = ["GET", "POST"]
 )
 project.register_blueprint(blueprint = tour.tour_app)
+
+user.user_app.add_url_rule(
+    rule = "/user",
+    view_func = user.show_user_app,
+    methods = ["GET", "POST"]
+)
+project.register_blueprint(blueprint = user.user_app)
