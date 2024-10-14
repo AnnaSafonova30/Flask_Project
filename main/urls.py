@@ -17,8 +17,13 @@ tour.tour_app.add_url_rule(
 project.register_blueprint(blueprint = tour.tour_app)
 
 user.user_app.add_url_rule(
-    rule = "/user",
-    view_func = user.show_user_app,
+    rule = "/registration",
+    view_func = user.registration_user_app,
+    methods = ["GET", "POST"]
+)
+user.user_app.add_url_rule(
+    rule = "/login",
+    view_func = user.login_user_app,
     methods = ["GET", "POST"]
 )
 project.register_blueprint(blueprint = user.user_app)
