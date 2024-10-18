@@ -5,9 +5,11 @@
 {% block content %}
     {% for tour in tours_list %}
         <div>
+            <hr>
             <a href="tour/{{ tour.id }}">{{ tour.title }}</a>
-            <p>{{ tour.date }}</p>
             <p>{{ tour.country }}</p>
+            <p>{{ tour.price }}</p>
+            <hr>
         </div>
     {% endfor %}
 {% endblock %}

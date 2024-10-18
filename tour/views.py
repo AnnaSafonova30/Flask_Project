@@ -2,7 +2,7 @@ import flask
 from flask_login import current_user
 from user.models import User
 from .models import Tour
-from main.settings import DATABASE
+from main.settings import database
 import os
 
 
@@ -29,12 +29,14 @@ def show_tour():
     #     price = "-1",
     #     description = "Отримайте можливість набити пику одному карлику"
     # )
+    
+    # database.session.add(product)
+    # database.session.add(product1)    
+    # database.session.add(product2)
+    # database.session.commit()
+    
     tours_list = Tour.query.all()
-
-    # DATABASE.session.add(product)
-    # DATABASE.session.add(product1)    
-    # DATABASE.session.add(product2)
-    # DATABASE.session.commit()
+    
     return flask.render_template(
         template_name_or_list = "tour.html", 
         tours_list = tours_list, 
