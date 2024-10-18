@@ -3,5 +3,11 @@
 {% block title %} tour {% endblock %}
 
 {% block content %}
-    <h1>Tour page</h1>
+    {% for tour in tours_list %}
+        <div>
+            <a href="tour/{{ tour.id }}">{{ tour.title }}</a>
+            <p>{{ tour.date }}</p>
+            <p>{{ tour.country }}</p>
+        </div>
+    {% endfor %}
 {% endblock %}

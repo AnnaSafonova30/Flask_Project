@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block title %} tour_view {% endblock %}
+
+{% block content %}
+    <h1>{{ tour.title }}</h1>
+    <p>{{ tour.date }}</p>
+    <p>{{ tour.country }}</p>
+    <p>{{ tour.prise }}</p>
+    <p>{{ tour.description }}</p>
+    <button>Замовити</button>
+{% endblock %}
