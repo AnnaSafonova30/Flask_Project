@@ -5,10 +5,12 @@
     <title>{% block title %} {% endblock %}</title>
 </head>
     <body>
+        
         <a href="/">Home</a>
         <a href="/tour">Tour</a>
-
+        
         {% if is_auth %}
+            <a href="/logout">Logout</a>
             <p>Вітаємо, {{ user_data.username }} !</p>
         {% else %}
             <a href="/registration">Registration</a>

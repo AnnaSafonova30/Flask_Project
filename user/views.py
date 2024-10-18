@@ -1,5 +1,5 @@
 import flask
-from flask_login import login_user, current_user
+from flask_login import login_user, current_user, logout_user
 from main.settings import database 
 from .models import User
 
@@ -25,10 +25,14 @@ def login_user_app():
         for user in User.query.filter_by(username = username):
             if user.password == password:
                 login_user(user)
-                flask.redirect("/")
-                break
+                return flask.redirect("/")
     
     return flask.render_template(
         template_name_or_list = "login.html",
         is_auth = current_user.is_authenticated,
         user_data = User.query.get(current_user.id) if current_user.is_authenticated else None)
+
+def logout():
+    logout_user()
+    
+    return flask.redirect("/")

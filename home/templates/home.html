@@ -3,9 +3,26 @@
 {% block title %}
     Home page
 {% endblock %}
-
+    
 {% block content %}
     <h1>Головна сторінка</h1>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Форма зворотного зв'язку</title>
+    </head>
+   <body>
+       <form method="POST">
+           <label for="client_name">Ваше ім'я:</label><br>
+           <input type="text" id="client_name" name="client_name" required><br><br>
+           <label for="email">Ваша електронна адреса:</label><br>
+           <input type="email" id="email" name="email" required><br><br>
+           <label for="feedback">Ваш відгук:</label><br>
+           <textarea id="feedback" name="feedback" rows="4" cols="50" required></textarea><br><br>
+           <button type="submit">Надіслати відгук</button>
+       </form>
+       
+   </body>
+
+
 {% endblock %}
-
-

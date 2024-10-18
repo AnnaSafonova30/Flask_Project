@@ -5,7 +5,8 @@ from .settings import project
 
 home.home_app.add_url_rule(
     rule = "/",
-    view_func = home.show_home_list
+    view_func = home.show_home_list,
+    methods = ["GET", "POST"]
 )
 project.register_blueprint(blueprint = home.home_app)
 
@@ -24,6 +25,12 @@ user.user_app.add_url_rule(
 user.user_app.add_url_rule(
     rule = "/login",
     view_func = user.login_user_app,
+    methods = ["GET", "POST"]
+)
+
+user.user_app.add_url_rule(
+    rule = "/logout",
+    view_func = user.logout,
     methods = ["GET", "POST"]
 )
 project.register_blueprint(blueprint = user.user_app)
